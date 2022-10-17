@@ -6,7 +6,7 @@ pygame.init()  # initializing pygame
 
 width, height = 800, 800  # setting up parameters for window
 WIN = pygame.display.set_mode((width, height))  # making window
-pygame.display.set_caption('Planet Simulation')  # title of window
+pygame.display.set_caption('Planet Simulation')  # title of the window
 
 WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
@@ -18,8 +18,8 @@ DARK_GREY = (80, 78, 81)
 class Planet:
     AU = 149.6e6 * 1000
     G = 6.67428e-11
-    SCALE = 225 / AU  # 1 AU = 100 pixels
-    TIMESTEP = 3600 * 24  # 1 day as 1 frame rate
+    SCALE = 225 / AU  # 1 AU ~ 100 pixels
+    TIMESTEP = 3600 * 24  # 1 day as 1 framerate
 
     def __init__(self, x, y, radius, color, mass):
         self.x = x
@@ -41,10 +41,10 @@ class Planet:
         pygame.draw.circle(win, self.color, (x, y), self.radius)
 
     def attraction(self, other):
-        # calculating farce of attr. between another obj. and current obj.
+        # calculating force of attr. between another obj. and current obj.
 
         other_x, other_y = other.x, other.y
-        # distance between another and current obj. == r
+        # distance between another and current obj. - radius
         distance_x = other_x - self.x
         distance_y = other_y - self.y
         distance = math.sqrt(distance_x ** 2 + distance_y ** 2)
