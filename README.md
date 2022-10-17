@@ -1,3 +1,3 @@
-#Plantet Simulation in python
+# Plantet Simulation in python
 
 Earth, Mars, Mercury and Venus simulation.
